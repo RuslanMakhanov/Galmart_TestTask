@@ -10,6 +10,6 @@ class Order(models.Model):
         ('delivering', 'Доставка'),
         ('completed', 'Завершен')
     ]
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='preparing', verbose_name="Статус")
-    amount = models.IntegerField(verbose_name="Сумма")
-    shop = models.ForeignKey(Shop, on_delete=models.CASCADE, verbose_name="Магазин")
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='preparing')
+    amount = models.IntegerField()
+    shop = models.ForeignKey('Shop', on_delete=models.CASCADE)
